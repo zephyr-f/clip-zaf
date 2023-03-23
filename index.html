@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>CrossClip Clone</title>
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="manifest" href="./manifest.json" />
+    <!-- Cache app files for offline use -->
+    <script>
+        if ("serviceWorker" in navigator) {
+            window.addEventListener("load", () => {
+                navigator.serviceWorker.register("/sw.js");
+            });
+        }
+    </script>
+    <!-- Register the app as a share target -->
+    <script>
+        if (navigator.share) {
+            navigator.shareTarget
+                .register({
+                    title: "CrossClip Clone",
+                    text: "Share text with CrossClip Clone",
+                })
+                .then(() => {
+                    console.log("Registered as a share target");
+                })
+                .catch((error) => {
+                    console.error("Error registering as a share target", error);
+                });
+        }
+    </script>
+
+</head>
+
+<body>
+    <div class="container">
+        <h1>clip-zaf</h1>
+        <textarea id="text"></textarea>
+        <button id="share">Share</button>
+    </div>
+
+    <script src="./app.js"></script>
+</body>
+
+</html>
