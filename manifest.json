@@ -3,10 +3,8 @@
     "short_name": "CrossClip",
     "icons": [
         {
-            "src": "icon-512x512.svg",
-            "sizes": "any",
-            "type": "image/svg+xml",
-            "purpose": "any"
+            "src": "logo.svg",
+            "sizes": "any"
         }
     ],
     "start_url": ".",
